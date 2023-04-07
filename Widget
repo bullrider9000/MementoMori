@@ -1,0 +1,26 @@
+<div id="grid" style="display: grid; grid-template-columns: repeat(52, 1fr); grid-template-rows: repeat(80, 1fr); gap: 1px;">
+  <!-- Loop through each row -->
+  <!-- The outer loop creates 80 rows -->
+  <!-- The inner loop creates 52 boxes within each row -->
+  <!-- Use the class "box" to style the boxes -->
+  <!-- You can also add other classes or styles to further customize the grid -->
+  <!-- Use the class "empty" to set the initial appearance of the boxes -->
+  <!-- Use the data-week attribute to keep track of which box is clicked -->
+  <!-- Use the data-year attribute to keep track of which row the box belongs to -->
+  <!-- The JavaScript code toggles the "filled" class of the clicked box -->
+  <!-- The "filled" class is used to style the box as black -->
+  <?php for ($row = 1; $row <= 80; $row++) { ?>
+    <?php for ($col = 1; $col <= 52; $col++) { ?>
+      <div class="box empty" data-week="<?php echo $col; ?>" data-year="<?php echo $row; ?>"></div>
+    <?php } ?>
+  <?php } ?>
+</div>
+
+<script>
+  const boxes = document.querySelectorAll('.box');
+  boxes.forEach(box => {
+    box.addEventListener('click', () => {
+      box.classList.toggle('filled');
+    });
+  });
+</script>
