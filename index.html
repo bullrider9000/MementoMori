@@ -1,4 +1,4 @@
-<div id="grid" style="display: grid; grid-template-columns: repeat(52, 1fr); grid-template-rows: repeat(80, 1fr); gap: 1px;">
+<div id="grid" style="display: grid; justify-content: center; align-items: center; grid-template-columns: repeat(52, 20px); grid-template-rows: repeat(80, 20px); gap: 2px;">
   <!-- Loop through each row -->
   <!-- The outer loop creates 80 rows -->
   <!-- The inner loop creates 52 boxes within each row -->
@@ -15,6 +15,13 @@
     <?php } ?>
   <?php } ?>
 </div>
+
+<style>
+  .box {
+    width: 20px;
+    height: 20px;
+  }
+</style>
 
 <script>
   const boxes = document.querySelectorAll('.box');
